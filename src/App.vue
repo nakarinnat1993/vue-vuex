@@ -1,28 +1,24 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="app" style="text-align:center">
+    <h2>{{ $store.state.count }}</h2>
+    <hr>
+    <ComponentA/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import ComponentA from "@/components/ComponentA.vue"
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  name:"App",
+  mounted() {
+    this.$store.state.count++;
+  },
+  components:{
+    ComponentA
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
