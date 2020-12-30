@@ -1,6 +1,6 @@
 <template>
   <div class="component-b" style="text-align:center">
-    <h2>{{ $store.state.count }}</h2>
+    <h2>{{ $store.getters.getCount }}</h2>
     <button @click="del">Delete</button>
   </div>
 </template>

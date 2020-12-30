@@ -7,6 +7,11 @@ export default new Vuex.Store({
   state: {
     count: 0
   },
+  getters: {
+    getCount(state) {
+      return state.count
+    }
+  },
   mutations: {
     setCountMutation(state, value) {
       state.count = value
@@ -14,10 +19,10 @@ export default new Vuex.Store({
   },
   actions: {
     addAction(context) {
-      context.commit("setCountMutation", this.state.count+1);
+      context.commit("setCountMutation", this.getters.getCount + 1);
     },
     delAction(context) {
-      context.commit("setCountMutation", this.state.count-1);
+      context.commit("setCountMutation", this.getters.getCount - 1);
     }
   },
   modules: {}
