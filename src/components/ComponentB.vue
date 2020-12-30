@@ -1,19 +1,19 @@
 <template>
-  <div class="component-a" style="text-align:center">
+  <div class="component-b" style="text-align:center">
     <h2>{{ $store.state.count }}</h2>
-    <button @click="add">Add</button>
+    <button @click="del">Delete</button>
   </div>
 </template>
 
 <script>
 export default {
-  name:"ComponentA",
+  name:"ComponentB",
   mounted() {
     // this.$store.state.count++;
   },
   methods: {
-      add(){
-          this.$store.dispatch("addAction");
+      del(){
+          this.$store.dispatch("delAction");
       }
   },
 }
